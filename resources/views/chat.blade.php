@@ -779,7 +779,7 @@
 
           // Ładowanie historii czatu
           function loadChatHistory() {
-              fetch(`${baseUrl}/chat/${chatId}/get-history`)
+              fetch(`/chat/${chatId}/get-history`)
               .then(response => response.json())
               .then(data => {
                   chatHistory.innerHTML = '';
@@ -796,7 +796,7 @@
           }
 
           // Wybór ekranu
-          fetch(`${baseUrl}/chat/${chatId}/check-survey-status`)
+          fetch(`/chat/${chatId}/check-survey-status`)
           .then(response => response.json())
           .then(data => {
               console.log("Odpowiedź z serwera (status ankiety):", data);
@@ -879,7 +879,7 @@
             endSurveyContainer.style.display = 'none';
             thankYouContainer.style.display = 'none';
 
-            fetch(`${baseUrl}/chat/${chatId}/store-survey`, {
+            fetch(`/chat/${chatId}/store-survey`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -925,7 +925,7 @@
 
               appendMessage(message, false);
 
-              fetch(`${baseUrl}/chat/${chatId}/send-message`, {
+              fetch(`/chat/${chatId}/send-message`, {
                   method: "POST",
                   headers: {
                       "Content-Type": "application/json",
@@ -954,7 +954,7 @@
 
                       // Oczekiwanie 3 sekundy przed fetch'em
                       setTimeout(() => {
-                          fetch(`${baseUrl}/chat/${chatId}/end-chat`, {
+                          fetch(`/chat/${chatId}/end-chat`, {
                               method: "POST",
                               headers: {
                                   "Content-Type": "application/json",
@@ -1032,7 +1032,7 @@
 
             await new Promise(resolve => setTimeout(resolve, 500));
           
-          fetch(`${baseUrl}/chat/${chatId}/end-chat`, {
+          fetch(`/chat/${chatId}/end-chat`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -1068,7 +1068,7 @@
           else {
             const q4 = Array.from(document.querySelectorAll('#q4 input[type="checkbox"]:checked')).map(checkbox => checkbox.value).join(' | ') || 'NoInfo';
             
-            fetch(`${baseUrl}/chat/${chatId}/end-survey`, {
+            fetch(`/chat/${chatId}/end-survey`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
