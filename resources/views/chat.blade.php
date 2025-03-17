@@ -799,7 +799,6 @@
           fetch(`/chat/${chatId}/check-survey-status`)
           .then(response => response.json())
           .then(data => {
-              console.log("Odpowiedź z serwera (status ankiety):", data);
               if (data.hasCompletedSurvey && !data.hasCompletedChat && !data.hasCompletedPostSurvey) {
                 helloContainer.style.display = 'none';
                 surveyContainer.style.display = 'none';
