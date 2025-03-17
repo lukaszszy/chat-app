@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use App\Services\OpenAIService;
 use App\Models\Chat;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -15,7 +15,7 @@ return new class extends Migration
     public function up()
     {
         for ($i = 1; $i <= 25; $i++) {
-            $chat = Chat::create(['unique_id' => Hash::make($i),'email' => $i,]);
+            $chat = Chat::create(['unique_id' => Str::random(32),'email' => $i,]);
         }
     }
 
