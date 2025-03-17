@@ -1063,6 +1063,8 @@
 
           if (checkedCount > 3) {
             alert("Proszę wybrać maksymalnie 3 odpowiedzi w sekcji 'Co najbardziej się spodobało'.");
+            button.disabled = false;
+            button.classList.remove('opacity-50');
           }
           else {
             const q4 = Array.from(document.querySelectorAll('#q4 input[type="checkbox"]:checked')).map(checkbox => checkbox.value).join(' | ') || 'NoInfo';
