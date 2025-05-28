@@ -297,6 +297,7 @@
                   Nauki o zarządzaniu i jakości
                 </option>
                 <option value="Nauki prawne">Nauki prawne</option>
+                <option value="Nauki socjologiczne">Nauki socjologiczne</option>
                 <option value="Pedagogika">Pedagogika</option>
                 <option value="Psychologia">Psychologia</option>
               </optgroup>
