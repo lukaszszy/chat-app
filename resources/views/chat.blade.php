@@ -293,13 +293,18 @@
                 <option value="Nauki o komunikacji społecznej i mediach">
                   Nauki o komunikacji społecznej i mediach
                 </option>
+                <option value="Nauki o polityce i administracji">
+                  Nauki o polityce i administracji
+                </option>
                 <option value="Nauki o zarządzaniu i jakości">
                   Nauki o zarządzaniu i jakości
                 </option>
                 <option value="Nauki prawne">Nauki prawne</option>
                 <option value="Nauki socjologiczne">Nauki socjologiczne</option>
                 <option value="Pedagogika">Pedagogika</option>
+                <option value="Prawo kanoniczne">Prawo kanoniczne</option>
                 <option value="Psychologia">Psychologia</option>
+                <option value="Stosunki międzynarodowe">Stosunki międzynarodowe</option>
               </optgroup>
 
               <!-- Dziedzina nauk ścisłych i przyrodniczych -->
@@ -309,7 +314,9 @@
                 <option value="Informatyka">Informatyka</option>
                 <option value="Matematyka">Matematyka</option>
                 <option value="Nauki biologiczne">Nauki biologiczne</option>
+                <option value="Nauki chemiczne">Nauki chemiczne</option>
                 <option value="Nauki fizyczne">Nauki fizyczne</option>
+                <option value="Nauki o Ziemi i środowisku">Nauki o Ziemi i środowisku</option>
               </optgroup>
 
               <!-- Dziedzina nauk teologicznych -->
