@@ -27,12 +27,19 @@ class ChatController extends Controller
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
 
+        $request->validate([
+            'gender' => 'required|string',
+            'age' => 'required|integer|min:1|max:120',
+            'discipline' => 'required|string',
+            'title' => 'nullable|string',
+        ]);
+
         $chat->update([
-           'gender' => $request->input('gender'),
-           'age' => $request->input('age'),
-           'discipline' => $request->input('discipline'),
-           'title' => $request->input('title'),
-           'survFinished' => true
+            'gender' => $request->gender,
+            'age' => $request->age,
+            'discipline' => $request->discipline,
+            'title' => $request->title,
+            'survFinished' => true,
         ]);
 
         $chat = Chat::where('unique_id', $id)->firstOrFail();
