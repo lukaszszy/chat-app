@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Config;
 use OpenAI;
 
 class OpenAIService
@@ -10,7 +11,7 @@ class OpenAIService
 
     public function __construct()
     {
-        $this->client = OpenAI::client(env('OPENAI_API_KEY'));
+       $this->client = OpenAI::client(Config::get('services.openai.key'));
     }
 
     public function askChatGPT($message, $chat)
@@ -38,6 +39,7 @@ class OpenAIService
             - Jeżeli rozmówca **odbiega od tematu** już piąty raz uprzejmie zakończ rozmowę, np. 'Dziękuję za poświęcony czas i cenne informacje.
             - Jeżeli rozmówca **odpowiedział już na wszystkie pytania**, uprzejmie zakończ rozmowę, np. 'Dziękuję za poświęcony czas i cenne informacje. To bardzo wartościowy wkład do naszego badania.'.
             - Jeżeli odpowiedzi są zbyt krótkie lub powierzchowne, zachęć rozmówcę do rozwinięcia myśli, np. 'Czy możesz rozwinąć ten wątek?' lub 'Czy masz przykład takiej sytuacji?'.
+            - Jeźeli rozmó∑ca udzielił juź w poprzednich wiadomościach odpowiedź na następne pytanie to go nie zadawaj.
             - Staraj się budować atmosferę zaufania — zapewnij rozmówcę, że każda odpowiedź jest wartościowa.
             Nie generuj więcej niż 3 zdania w odpowiedzi i mniej niż jedno zdanie (max. 350 znaków) Zawsze zwracaj odpowiedź.
         ";
@@ -54,7 +56,7 @@ class OpenAIService
 	    $messages[] = ['role' => 'user', 'content' => $message];
 
         $response = $this->client->chat()->create([
-            'model' => 'gpt-4o', // Możesz zmienić na gpt-4, jeśli masz dostęp
+            'model' => 'gpt-4o',
             'max_tokens' => 200,
             'temperature' => 0.3,
             'messages' => $messages

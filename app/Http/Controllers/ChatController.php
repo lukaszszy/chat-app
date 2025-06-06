@@ -42,7 +42,6 @@ class ChatController extends Controller
             'survFinished' => true,
         ]);
 
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
         $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $chat);
         $message = $chat->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
         $chat->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
