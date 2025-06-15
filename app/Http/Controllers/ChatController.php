@@ -49,21 +49,6 @@ class ChatController extends Controller
         return response()->json(['message' => 'Ankieta zapisana i zakończona.']);
     }
 
-    public function checkSurveyStatus($id)
-    {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
-    
-        $hasCompletedSurvey = $chat && $chat->survFinished == "1";
-        $hasCompletedChat = $chat && $chat->chatFinished == "1";
-        $hasCompletedPostSurvey = $chat && $chat->postsurFinished == "1";
-    
-        return response()->json([
-            'hasCompletedSurvey' => $hasCompletedSurvey,
-            'hasCompletedChat' => $hasCompletedChat,
-            'hasCompletedPostSurvey' => $hasCompletedPostSurvey
-        ], 200)->header('Content-Type', 'application/json');
-    }
-
     public function getHistory($id)
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
