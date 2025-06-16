@@ -20,7 +20,7 @@ class ChatController extends Controller
 
     public function showChat($id)
     {
-        $link = Links::where('url', $id)->firstOrFail();
+        $link = Link::where('url', $id)->firstOrFail();
         return view('chat', ['chat' => $link]);
     }
 /*
