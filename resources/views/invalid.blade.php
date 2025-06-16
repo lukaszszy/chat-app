@@ -44,13 +44,12 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
-        <h2 class="text-xl mb-0 text-center">Instructions</h2>
-        <h2 class="text-base mb-0 text-justify">
-          <p>
-            This link is not valid. Please contact cpps@amu.edu.pl
-          </p>
+      <div id="hello-container" class="w-[60%] flex flex-col mt-4">
+        <br/>
+        <h2 class="text-xl mb-4 text-center">
+          This link is not valid. Please contact cpps@amu.edu.pl
         </h2>
+        <br/>
       </div>
     
     </div>
