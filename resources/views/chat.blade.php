@@ -531,7 +531,7 @@
           })
           .then(response => response.json())
           .then(data => {
-            if (data.checkEnd == true || userMessagesCount >= 25) {
+            if (data.checkEnd === true || userMessagesCount >= 25) {
               appendMessage("Thank you for the interview. We have to finish, you will be redirected.", true);
               setTimeout(() => {
                 endSurveyContainer.style.display = 'block';
