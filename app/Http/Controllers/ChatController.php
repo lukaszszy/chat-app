@@ -44,7 +44,7 @@ class ChatController extends Controller
 
         $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $interview);
         $message = $interview->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
-        $interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
+        $interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => false]);
         
         return response()->json(['message' => 'Ankieta zapisana i zakończona.']);
     }

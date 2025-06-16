@@ -34,7 +34,7 @@ return new class extends Migration
             $table->unsignedBigInteger('interview_id');
             $table->string('content', 1000)->nullable(false)->default("NO_DATA");
             $table->boolean('is_bot')->nullable(false)->default(false);
-            $table->string('finished_by_boot', 500)->nullable(false)->default(false);
+            $table->boolean('finished_by_boot')->nullable(false)->default(false);
             $table->timestamps();
 
             $table->foreign('interview_id')->references('id')->on('interviews')->onDelete('cascade');
