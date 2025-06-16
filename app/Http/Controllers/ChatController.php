@@ -42,9 +42,9 @@ class ChatController extends Controller
             'title' => $request->title,
         ]);
 
-        $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $interview);
-        $message = $interview->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
-        $interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
+        #$botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $interview);
+        #$message = $interview->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
+        #$interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
         
         return response()->json(['message' => 'Ankieta zapisana i zakończona.']);
     }
