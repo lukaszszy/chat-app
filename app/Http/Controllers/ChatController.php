@@ -56,45 +56,34 @@ class ChatController extends Controller
 
         return response()->json(['messages' => $messages]);
     }
-/*
+
     public function sendMessage(Request $request, $id)
     {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
+        $interview = Interview::where('url', $id)->firstOrFail();
         $userMessage = $request->input('message');
 
         // Zapis wiadomości użytkownika
-        $message = $chat->messages()->create(['content' => $userMessage, 'is_bot' => false]);
+        $message = $interview->messages()->create(['content' => $userMessage, 'is_bot' => false]);
 
         // Odpowiedź bota (przykład z ChatGPT)
-        $botResponse = $this->openAIService->askChatGPT($userMessage, $chat);
+        $botResponse = $this->openAIService->askChatGPT($userMessage, $interview);
 
         //checkEnd
         $checkEnd = $this->openAIService->checkEnd($botResponse);
 
         if($checkEnd == "TAK") {
-            $checkEnd = "End";
+            $checkEnd = true;
         }
         else {
-            $checkEnd = "Continue";
+            $checkEnd = false;
         }
 
         // Zapis odpowiedzi bota
-        $chat->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => $checkEnd]);
+        $interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => $checkEnd]);
 
         return response()->json(['userMessage' => $message, 'botResponse' => $botResponse, 'checkEnd' => $checkEnd]);
     }
-
-    public function endChat($id)
-    {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
-
-        $chat->update([
-            'chatFinished' => true
-         ]);
-
-        return response()->json(['message' => 'Czat zakończony.']);
-    }
-
+/*
     public function storeEndSurvey(Request $request, $id)
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
