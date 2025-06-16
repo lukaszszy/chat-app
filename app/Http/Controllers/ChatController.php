@@ -48,15 +48,15 @@ class ChatController extends Controller
         
         return response()->json(['message' => 'Ankieta zapisana i zakończona.']);
     }
-/*
+
     public function getHistory($id)
     {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
+        $chat = Interview::where('url', $id)->firstOrFail();
         $messages = $chat->messages()->orderBy('id')->skip(1)->take(PHP_INT_MAX)->get();
 
         return response()->json(['messages' => $messages]);
     }
-
+/*
     public function sendMessage(Request $request, $id)
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
