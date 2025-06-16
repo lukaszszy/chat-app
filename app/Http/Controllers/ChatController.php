@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Link;
 use App\Models\Chat;
 use App\Models\Message;
 use App\Models\QualitySurvey;
@@ -19,10 +20,10 @@ class ChatController extends Controller
 
     public function showChat($id)
     {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
-        return view('chat', ['chat' => $chat]);
+        $link = Links::where('url', $id)->firstOrFail();
+        return view('chat', ['chat' => $link]);
     }
-
+/*
     public function storeSurvey(Request $request, $id)
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
@@ -114,5 +115,5 @@ class ChatController extends Controller
     
         return response()->json(['message' => 'Ankieta końcowa zapisana i zakończona.']);
     }
-
+*/
 }
