@@ -10,15 +10,11 @@ class Interview extends Model
     use HasFactory;
 
     protected $fillable = [
-        'unique_id',
-        'email',
+        'url',
         'gender',
         'age',
         'discipline',
         'title',
-        'survFinished',
-        'chatFinished',
-        'postsurFinished'
     ];
 
     public $timestamps = true;
