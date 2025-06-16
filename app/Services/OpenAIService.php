@@ -14,7 +14,7 @@ class OpenAIService
        $this->client = OpenAI::client(Config::get('services.openai.key'));
     }
 
-    public function askChatGPT($message, $chat)
+    public function askChatGPT($message, $interview)
     {
 	    $agent_init_rules = "Jesteś doświadczonym badaczem i specjalistą w dziedzinie szkolnictwa wyższego oraz nauki.
             Twoim zadaniem jest przeprowadzenie wywiadu z naukowcem na temat sukcesu w karierze akademickiej oraz rezygnacji z pracy na uczelni.
@@ -45,7 +45,7 @@ class OpenAIService
         ";
 
         // Pobierz historię czatu i przekształć w tablicę dla OpenAI
-        $messages = $chat->messages()->orderBy('created_at')->get()
+        $messages = $interview->messages()->orderBy('created_at')->get()
             ->map(fn($chatMessage) => [
                 'role' => $chatMessage->is_bot ? 'system' : 'user',
                 'content' => $chatMessage->content
@@ -55,7 +55,7 @@ class OpenAIService
 	    array_unshift($messages, ['role' => 'system', 'content' => $agent_init_rules]);
 	    $messages[] = ['role' => 'user', 'content' => $message];
 
-        $response = $this->client->chat()->create([
+        $response = $this->client->interview()->create([
             'model' => 'gpt-4o',
             'max_tokens' => 200,
             'temperature' => 0.3,
@@ -80,7 +80,7 @@ class OpenAIService
         array_unshift($messages, ['role' => 'system', 'content' => $agent_init_rules]);
         $messages[] = ['role' => 'user', 'content' => $question];
 
-        $response = $this->client->chat()->create([
+        $response = $this->client->interview()->create([
             'model' => 'gpt-4o',
             'messages' => $messages
         ]);

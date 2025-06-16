@@ -10,14 +10,14 @@ class Message extends Model
     use HasFactory;
 
     protected $fillable = [
-        'chat_id',
+        'interview_id',
         'content',
         'is_bot',
         'finished_by_boot'
     ];
 
-    public function chat()
+    public function interview()
     {
-        return $this->belongsTo(Chat::class);
+        return $this->belongsTo(Interview::class);
     }
 }
