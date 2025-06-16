@@ -521,7 +521,7 @@
           messageInput.value = "";
           updateCharCount();
 
-          fetch(`/${chatId}/send-message`, {
+          fetch(`/${anonymous_id}/send-message`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -584,7 +584,7 @@
             await new Promise(resolve => setTimeout(resolve, 250));
             endSurveyContainer.style.display = 'none';
             thankYouContainer.style.display = 'block';
-            fetch(`/${chatId}/end-survey`, {
+            fetch(`/${anonymous_id}/end-survey`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
