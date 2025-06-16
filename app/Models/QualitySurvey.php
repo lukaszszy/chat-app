@@ -10,7 +10,7 @@ class QualitySurvey extends Model
     use HasFactory;
 
     protected $fillable = [
-        'chat_id',
+        'interview_id',
         'q1',
         'q2',
         'q3',
@@ -18,9 +18,8 @@ class QualitySurvey extends Model
         'q5'
     ];
 
-    // Relacja z czatem
-    public function chat()
+    public function interview()
     {
-        return $this->belongsTo(Chat::class);
+        return $this->belongsTo(Interview::class);
     }
 }

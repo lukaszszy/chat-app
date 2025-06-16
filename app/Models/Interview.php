@@ -23,4 +23,9 @@ class Interview extends Model
     {
         return $this->hasMany(Message::class);
     }
+
+    public function qualitySurveys()
+    {
+    return $this->hasOne(QualitySurvey::class);
+    }
 }

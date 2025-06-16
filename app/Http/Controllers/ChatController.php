@@ -83,25 +83,19 @@ class ChatController extends Controller
 
         return response()->json(['userMessage' => $message, 'botResponse' => $botResponse, 'checkEnd' => $checkEnd]);
     }
-/*
+
     public function storeEndSurvey(Request $request, $id)
     {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
+        $interview = Interview::where('url', $id)->firstOrFail();
 
-        QualitySurvey::create([
-            'chat_id' => $chat->id,
+        $interview->qualitySurveys()->create([
             'q1' => $request->input('q1'),
             'q2' => $request->input('q2'),
             'q3' => $request->input('q3'),
             'q4' => $request->input('q4'),
             'q5' => $request->input('q5')
         ]);
-
-        $chat->update([
-            'postsurFinished' => true
-         ]);
     
         return response()->json(['message' => 'Ankieta końcowa zapisana i zakończona.']);
     }
-*/
 }
