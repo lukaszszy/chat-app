@@ -34,13 +34,12 @@ class ChatController extends Controller
             'title' => 'required|string',
         ]);
 
-        $interview->Chat::create([
+        $interview->Interview::create([
             'url' => $request->anonymous_id,
             'gender' => $request->gender,
             'age' => $request->age,
             'discipline' => $request->discipline,
             'title' => $request->title,
-            'survFinished' => true,
         ]);
 
         $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $interview);
