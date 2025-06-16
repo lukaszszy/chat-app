@@ -21,7 +21,13 @@ class ChatController extends Controller
     public function showChat($id)
     {
         $link = Link::where('url', $id)->firstOrFail();
-        return view('chat', ['chat' => $link]);
+        if($link->linkClicked == false){
+            $link->update(['linkClicked' => true]);
+            return view('chat', ['chat' => $link]);
+        }
+        else{
+            return view('invalid', ['chat' => $link]);
+        }
     }
 
     public function storeSurvey(Request $request)
