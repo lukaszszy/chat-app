@@ -394,8 +394,8 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", async function() {
-        let chatId = window.location.pathname.split('/').pop();
         let userMessagesCount = 0;
+        const anonymous_id = crypto.randomUUID().replace(/-/g, '');
 
         const helloContainer = document.getElementById('hello-container');
         const surveyContainer = document.getElementById('survey-container');
@@ -447,13 +447,13 @@
             sendButton.classList.add('opacity-50');
             surveyContainer.style.display = 'none';
             chatContainer.style.display = 'flex';
-            fetch(`/${chatId}/store-survey`, {
+            fetch(`/store-survey`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": "{{ csrf_token() }}"
               },
-              body: JSON.stringify({ gender, age, discipline, title })
+              body: JSON.stringify({ anonymous_id, gender, age, discipline, title })
             })
             .then(() => {
               loadChatHistory();
@@ -463,7 +463,7 @@
         });
 
         function loadChatHistory() {
-          fetch(`/${chatId}/get-history`)
+          fetch(`/${anonymous_id}/get-history`)
           .then(response => response.json())
           .then(data => {
             chatHistory.innerHTML = '';

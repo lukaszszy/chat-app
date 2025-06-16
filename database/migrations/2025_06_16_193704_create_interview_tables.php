@@ -22,7 +22,7 @@ return new class extends Migration
         Schema::create('interviews', function (Blueprint $table) {
             $table->id();
             $table->string('url', 100)->unique();
-            $table->enum('gender', ['male', 'female', 'NoComment', 'NO_DATA'])->default("NO_DATA");
+            $table->enum('gender', ['male', 'female', 'PreferNotSay', 'NO_DATA'])->default("NO_DATA");
             $table->integer('age')->nullable(false)->default(0);
             $table->string('discipline', 500)->nullable(false)->default("NO_DATA");
             $table->string('title', 500)->nullable(false)->default("NO_DATA");

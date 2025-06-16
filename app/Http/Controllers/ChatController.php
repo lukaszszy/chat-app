@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Link;
-use App\Models\Chat;
+use App\Models\Interview;
 use App\Models\Message;
 use App\Models\QualitySurvey;
 use App\Services\OpenAIService;
@@ -23,19 +23,19 @@ class ChatController extends Controller
         $link = Link::where('url', $id)->firstOrFail();
         return view('chat', ['chat' => $link]);
     }
-/*
-    public function storeSurvey(Request $request, $id)
-    {
-        $chat = Chat::where('unique_id', $id)->firstOrFail();
 
+    public function storeSurvey(Request $request)
+    {
         $request->validate([
+            'anonymous_id' => 'required|string',
             'gender' => 'required|string',
-            'age' => 'required|integer|min:1|max:120',
+            'age' => 'required|integer|min:0|max:100',
             'discipline' => 'required|string',
-            'title' => 'nullable|string',
+            'title' => 'required|string',
         ]);
 
-        $chat->update([
+        $interview->Chat::create([
+            'url' => $request->anonymous_id,
             'gender' => $request->gender,
             'age' => $request->age,
             'discipline' => $request->discipline,
@@ -43,13 +43,13 @@ class ChatController extends Controller
             'survFinished' => true,
         ]);
 
-        $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $chat);
-        $message = $chat->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
-        $chat->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
+        $botResponse = $this->openAIService->askChatGPT("Zacznij rozmowę", $interview);
+        $message = $interview->messages()->create(['content' => "Zacznij rozmowę", 'is_bot' => false]);
+        $interview->messages()->create(['content' => $botResponse, 'is_bot' => true, 'finished_by_boot' => "Continue"]);
         
         return response()->json(['message' => 'Ankieta zapisana i zakończona.']);
     }
-
+/*
     public function getHistory($id)
     {
         $chat = Chat::where('unique_id', $id)->firstOrFail();
