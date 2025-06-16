@@ -16,7 +16,7 @@ class Message extends Model
         'finished_by_boot'
     ];
 
-    public function interview()
+    public function interviews()
     {
         return $this->belongsTo(Interview::class);
     }
