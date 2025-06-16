@@ -80,7 +80,7 @@ class OpenAIService
         array_unshift($messages, ['role' => 'system', 'content' => $agent_init_rules]);
         $messages[] = ['role' => 'user', 'content' => $question];
 
-        $response = $this->client->interview()->create([
+        $response = $this->client->chat()->create([
             'model' => 'gpt-4o',
             'messages' => $messages
         ]);
