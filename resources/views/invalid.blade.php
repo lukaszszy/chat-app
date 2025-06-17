@@ -41,7 +41,7 @@
     </div>
 
     <!--- Main DIV --->
-    <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
+    <div class="flex-1 content-wrapper flex items-center justify-center w-full min-h-screen relative">
       
       <!--- Instruction screen  --->
       <div id="hello-container" class="w-[60%] flex flex-col items-center mt-4 mb-4">
@@ -49,7 +49,7 @@
           This link is not valid. Please contact cpps@amu.edu.pl
         </h2>
       </div>
-    
+
     </div>
 
     <!--- Footer --->
