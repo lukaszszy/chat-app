@@ -47,7 +47,7 @@
       <div id="hello-container" class="w-full max-w-3xl flex flex-col space-y-4 mt-4">
         <br/>
         <h2 class="text-xl mb-4 text-center">
-          This link is not valid. Please contact cpps@amu.edu.pl.
+          This link has expired. If you would like recive a new one please contact cpps@amu.edu.pl.
         </h2>
         <br/>
       </div>
