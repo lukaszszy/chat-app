@@ -47,7 +47,7 @@
       <div id="hello-container" class="w-full max-w-3xl flex flex-col space-y-4 mt-4">
         <br/>
         <h2 class="text-xl mb-4 text-center">
-          Error 401, unauthorized.
+          Error 401.
         </h2>
         <br/>
       </div>
