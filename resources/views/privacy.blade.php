@@ -47,7 +47,6 @@
       <div id="hello-container" class="w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
         <h2 class="text-xl mb-0 text-center">Privacy Policy</h2>
         <p class="text-sm text-center text-gray-500">Last updated: June 16, 2025</p>
-        <br>
         <div class="text-justify">
           <p>1. Data Controller<br>
           The data controller is Adam Mickiewicz University in Poznań, located at Wieniawskiego 1, 61-712 Poznań, Poland. For matters related to personal data protection, please contact at: cpps@amu.edu.pl.</p>
