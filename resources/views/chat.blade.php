@@ -385,6 +385,8 @@
         </h2>
         <br/>
       </div>
+      
+    </div>
 
     <!--- Footer --->
     <footer id="footer" class="bg-white text-gray-500 text-center py-4 shadow-md transition-all duration-300">
