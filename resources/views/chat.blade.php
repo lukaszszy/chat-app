@@ -68,7 +68,7 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
+      <div id="hello-container" class="w-[95%] md:w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
         <h2 class="text-xl mb-0 text-center">Instructions</h2>
         <h2 class="text-base mb-0 text-justify">
           <p>
@@ -101,7 +101,7 @@
       </div>
 
       <!--- Survey screen  --->
-      <div id="survey-container" class="w-[60%] flex flex-col mt-4">
+      <div id="survey-container" class="w-[95%] md:w-[60%] flex flex-col mt-4">
 
         <h2 class="text-xl mb-0 text-center">Part 1: Survey</h2>
 
@@ -231,7 +231,7 @@
       </div>
 
       <!--- Interview  --->
-      <div id="chat-container" class="flex flex-col w-[60%] mt-4 space-y-1" style="height: 70vh;">
+      <div id="chat-container" class="flex flex-col w-[95%] md:w-[60%] mt-4 space-y-1" style="height: 70vh;">
         <h2 class="text-xl text-center">Part 2: AI Assisted Interview</h2>
 
         <div id="chat-history" class="flex-grow overflow-y-auto">
@@ -257,7 +257,7 @@
       </div>
 
       <!--- Post int survey  --->
-      <div id="end-survey-container" class="w-[60%] flex flex-col space-y-6 mt-4">
+      <div id="end-survey-container" class="w-[95%] md:w-[60%] flex flex-col space-y-6 mt-4">
 
         <h3 class="text-xl mb-0 text-center">Post interview impressions</h3>
 

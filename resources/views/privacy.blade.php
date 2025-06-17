@@ -44,7 +44,7 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
+      <div id="hello-container" class="w-[95%] md:w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
         <h2 class="text-xl mb-0 text-center">Privacy Policy</h2>
         <p class="text-sm text-center text-gray-500">Last updated: June 16, 2025</p>
         <div class="text-justify">
