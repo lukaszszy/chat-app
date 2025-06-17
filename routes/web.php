@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ChatController;
 
-Route::get('/policy', function () { return view('policy'); });
+Route::get('/privacy', function () { return view('privacy'); });
 
 Route::get('/{id}', [ChatController::class, 'showChat'])->name('chat.show');
 Route::post('/store-survey', [ChatController::class, 'storeSurvey'])->name('chat.store');
