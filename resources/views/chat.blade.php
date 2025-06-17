@@ -378,7 +378,7 @@
       </div>
 
       <!--- Thank you screen --->
-      <div id="thank-you-container" class="w-[60%] flex flex-col mt-4">
+      <div id="thank-you-container" class="w-[60%] flex flex-col justify-center items-center mt-4">
         <br/>
         <h2 class="text-xl mb-4 text-center">
           Thank you very much for your participation in the interview.

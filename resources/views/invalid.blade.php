@@ -44,7 +44,7 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[60%] flex flex-col mt-4">
+      <div id="hello-container" class="w-[60%] flex flex-col justify-center items-center mt-4">
         <br/>
         <h2 class="text-xl mb-4 text-center">
           This link is not valid. Please contact cpps@amu.edu.pl
