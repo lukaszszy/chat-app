@@ -52,13 +52,11 @@
           </p>
         </h2>
       </div>
-
     </div>
 
     <!--- Footer --->
     <footer id="footer" class="bg-white text-gray-500 text-center py-4 shadow-md transition-all duration-300">
       © 2025 Adam Mickiewicz University. All rights reserved
     </footer>
-
   </body>
 </html>
