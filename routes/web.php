@@ -10,6 +10,8 @@ Route::get('/{id}/get-history', [ChatController::class, 'getHistory'])->name('ch
 Route::post('/{id}/send-message', [ChatController::class, 'sendMessage'])->name('chat.message');
 Route::post('/{id}/end-survey', [ChatController::class, 'storeEndSurvey'])->name('chat.endSurvey');
 
+Route::get('/policy', function () { return view('policy'); });
+
 
 
 
