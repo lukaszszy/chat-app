@@ -90,6 +90,7 @@
           <p>
             Please answer in detail, at least 2-3 sentences per question.
             <br/>We are interested in your individual perspective, not just general statements.
+            <br/>The interview will be conducted in a language of your choice.
           </p>
           <br/>
           <p>Click NEXT to begin the interview.</p>
@@ -193,7 +194,6 @@
           <div class="space-y-1">
               <label for="language" class="block text-lg">5. Please select your language for interview:</label>
               <select id="language" name="language" class="w-full p-1 border border-gray-300 rounded bg-white">
-                  <option value="Arabic">Arabic</option>
                   <option value="Czech">Czech</option>
                   <option value="Danish">Danish</option>
                   <option value="Dutch">Dutch</option>
@@ -202,16 +202,11 @@
                   <option value="Finnish">Finnish</option>
                   <option value="French">French</option>
                   <option value="German">German</option>
-                  <option value="Greek">Greek</option>
-                  <option value="Hebrew">Hebrew</option>
                   <option value="Hungarian">Hungarian</option>
                   <option value="Icelandic">Icelandic</option>
-                  <option value="Irish">Irish</option>
                   <option value="Italian">Italian</option>
-                  <option value="Japanese">Japanese</option>
                   <option value="Latvian">Latvian</option>
                   <option value="Lithuanian">Lithuanian</option>
-                  <option value="Luxembourgish">Luxembourgish</option>
                   <option value="Norwegian">Norwegian</option>
                   <option value="Polish">Polish</option>
                   <option value="Portuguese">Portuguese</option>
@@ -220,7 +215,6 @@
                   <option value="Spanish">Spanish</option>
                   <option value="Swedish">Swedish</option>
                   <option value="Turkish">Turkish</option>
-                  <option value="Korean">Korean</option>
               </select>
           </div>
         </form>
