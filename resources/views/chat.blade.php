@@ -378,10 +378,12 @@
       </div>
 
       <!--- Thank you screen --->
-      <div id="thank-you-container" class="w-[60%] flex flex-col items-center mt-4 mb-4">
-        <h2 class="text-xl text-center">
-          This link is not valid. Please contact cpps@amu.edu.pl
+      <div id="thank-you-container" class="w-full max-w-3xl flex flex-col space-y-4 mt-4">
+        <br/>
+        <h2 class="text-xl mb-4 text-center">
+          Thank you very much for your participation in the interview.
         </h2>
+        <br/>
       </div>
 
     <!--- Footer --->
