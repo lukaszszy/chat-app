@@ -56,7 +56,10 @@
 
     <!--- Footer --->
     <footer id="footer" class="bg-white text-gray-500 text-center py-4 shadow-md transition-all duration-300">
-      © 2025 Adam Mickiewicz University. All rights reserved
+      © 2025 Adam Mickiewicz University. All rights reserved. 
+      <a href="/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+        Privacy Policy
+      </a>
     </footer>
   
   </body>
