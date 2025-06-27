@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AMU AI Assisted Interview</title>
+    <title>AMU AI-Assisted Interview</title>
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -37,7 +37,7 @@
     <!--- Header  --->
     <div id="header-bar" class="flex justify-center items-center py-2 px-4">
       <img src="{{ asset('images/university-logo.jpg') }}" alt="Logo Uczelni" class="h-20 object-contain mr-4"/>
-      <h1 class="text-lg"> Center for Public Policy Studies<br/>AI Assisted Interview </h1>
+      <h1 class="text-lg"> Center for Public Policy Studies<br/>AI-Assisted Interview </h1>
     </div>
 
     <!--- Main DIV --->
