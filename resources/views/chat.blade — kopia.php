@@ -19,7 +19,7 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
       #hello-container, #survey-container, #chat-container, #end-survey-container, #thank-you-container {
-        background: rgba(255, 255, 255, 0.91);
+        background: rgba(255, 255, 255, 1);
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         padding: 10px;
@@ -68,7 +68,7 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
+      <div id="hello-container" class="w-[95%] md:w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
         <h2 class="text-xl mb-0 text-center">Instructions</h2>
         <h2 class="text-base mb-0 text-justify">
           <p>
@@ -90,6 +90,7 @@
           <p>
             Please answer in detail, at least 2-3 sentences per question.
             <br/>We are interested in your individual perspective, not just general statements.
+            <br/>The interview will be conducted in a language of your choice.
           </p>
           <br/>
           <p>Click NEXT to begin the interview.</p>
@@ -101,7 +102,7 @@
       </div>
 
       <!--- Survey screen  --->
-      <div id="survey-container" class="w-[60%] flex flex-col mt-4">
+      <div id="survey-container" class="w-[95%] md:w-[60%] flex flex-col mt-4">
 
         <h2 class="text-xl mb-0 text-center">Part 1: Survey</h2>
 
@@ -193,7 +194,6 @@
           <div class="space-y-1">
               <label for="language" class="block text-lg">5. Please select your language for interview:</label>
               <select id="language" name="language" class="w-full p-1 border border-gray-300 rounded bg-white">
-                  <option value="Arabic">Arabic</option>
                   <option value="Czech">Czech</option>
                   <option value="Danish">Danish</option>
                   <option value="Dutch">Dutch</option>
@@ -202,16 +202,11 @@
                   <option value="Finnish">Finnish</option>
                   <option value="French">French</option>
                   <option value="German">German</option>
-                  <option value="Greek">Greek</option>
-                  <option value="Hebrew">Hebrew</option>
                   <option value="Hungarian">Hungarian</option>
                   <option value="Icelandic">Icelandic</option>
-                  <option value="Irish">Irish</option>
                   <option value="Italian">Italian</option>
-                  <option value="Japanese">Japanese</option>
                   <option value="Latvian">Latvian</option>
                   <option value="Lithuanian">Lithuanian</option>
-                  <option value="Luxembourgish">Luxembourgish</option>
                   <option value="Norwegian">Norwegian</option>
                   <option value="Polish">Polish</option>
                   <option value="Portuguese">Portuguese</option>
@@ -220,7 +215,6 @@
                   <option value="Spanish">Spanish</option>
                   <option value="Swedish">Swedish</option>
                   <option value="Turkish">Turkish</option>
-                  <option value="Korean">Korean</option>
               </select>
           </div>
         </form>
@@ -231,7 +225,7 @@
       </div>
 
       <!--- Interview  --->
-      <div id="chat-container" class="flex flex-col w-[60%] mt-4 space-y-1" style="height: 70vh;">
+      <div id="chat-container" class="flex flex-col w-[95%] md:w-[60%] mt-4 space-y-1" style="height: 70vh;">
         <h2 class="text-xl text-center">Part 2: AI Assisted Interview</h2>
 
         <div id="chat-history" class="flex-grow overflow-y-auto">
@@ -257,7 +251,7 @@
       </div>
 
       <!--- Post int survey  --->
-      <div id="end-survey-container" class="w-[60%] flex flex-col space-y-6 mt-4">
+      <div id="end-survey-container" class="w-[95%] md:w-[60%] flex flex-col space-y-6 mt-4">
 
         <h3 class="text-xl mb-0 text-center">Post interview impressions</h3>
 
