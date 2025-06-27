@@ -18,7 +18,7 @@
         padding: 0;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
-      #hello-container {
+      #hello-container{
         background: rgba(255, 255, 255, 1);
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -44,9 +44,14 @@
     <div class="flex-1 content-wrapper flex items-center justify-center w-full relative">
       
       <!--- Instruction screen  --->
-      <div id="hello-container" class="w-[95%] md:w-[60%] flex flex-col space-y-3 mt-4" style="display: block;">
-        <h2 class="text-xl mb-0 text-center">EMPTY</h2>
+      <div id="hello-container" class="w-full max-w-3xl flex flex-col space-y-4 mt-4">
+        <br/>
+        <h2 class="text-xl mb-4 text-center">
+          EMPTY
+        </h2>
+        <br/>
       </div>
+    
     </div>
 
     <!--- Footer --->
@@ -56,5 +61,6 @@
         Privacy Policy
       </a>
     </footer>
+  
   </body>
 </html>
