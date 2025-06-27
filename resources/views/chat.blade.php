@@ -451,7 +451,7 @@
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": "{{ csrf_token() }}"
               },
-              body: JSON.stringify({ anonymous_id, gender, age, discipline, title })
+              body: JSON.stringify({ anonymous_id, gender, age, discipline, title, language})
             })
             .then(() => {
               loadChatHistory();
