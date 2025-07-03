@@ -22,11 +22,22 @@ class ChatController extends Controller
     {
         $link = Link::where('url', $id)->firstOrFail();
         if($link->linkClicked == false){
-            $link->update(['linkClicked' => true]);
             return view('chat', ['chat' => $link]);
         }
         else{
             return view('invalid', ['chat' => $link]);
+        }
+    }
+
+    public function blockLink(Request $request)
+    {
+        $request->validate([
+            'link' => 'required|string'
+        ]);
+
+        $link = Link::where('url', $request->link)->firstOrFail();
+        if($link->linkClicked == false){
+            $link->update(['linkClicked' => true]);
         }
     }
 
