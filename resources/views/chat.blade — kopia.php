@@ -75,7 +75,7 @@
             You are about to take part in an interview conducted by an AI assistant.
             The assistant will ask a few questions, just like a human interviewer.
             The questions will focus on academic success and leaving a university position.
-            The interview will take about 20 minutes.
+            The interview will take about 10-15 minutes.
           </p>
           <br/>
           <p>The interview has two parts:</p>
@@ -394,6 +394,7 @@
       document.addEventListener("DOMContentLoaded", async function() {
         let userMessagesCount = 0;
         const anonymous_id = crypto.randomUUID().replace(/-/g, '');
+        const link = window.location.pathname.split('/').pop();
 
         const helloContainer = document.getElementById('hello-container');
         const surveyContainer = document.getElementById('survey-container');
@@ -451,7 +452,15 @@
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": "{{ csrf_token() }}"
               },
-              body: JSON.stringify({ anonymous_id, gender, age, discipline, title })
+              body: JSON.stringify({ anonymous_id, gender, age, discipline, title, language})
+            })
+            fetch(`/block-link`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+              },
+              body: JSON.stringify({ link })
             })
             .then(() => {
               loadChatHistory();
